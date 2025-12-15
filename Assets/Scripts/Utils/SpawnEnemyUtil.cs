@@ -7,7 +7,7 @@ public class SpawnEnemyUtil : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        FindObjectOfType<GameController>().enemies = GameObject.FindGameObjectsWithTag("Enemy");
-        FindObjectOfType<GameController>().enemyCount = Mathf.Max(FindObjectOfType<GameController>().enemies.Length, 0);
+        FindFirstObjectByType<GameController>().enemies = GameObject.FindGameObjectsWithTag("Enemy");
+        FindFirstObjectByType<GameController>().enemyCount = Mathf.Max(FindFirstObjectByType<GameController>().enemies.Length, 0);
     }
 }

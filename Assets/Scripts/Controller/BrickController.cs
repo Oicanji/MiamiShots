@@ -13,8 +13,6 @@ public class BrickController : MonoBehaviour
 
     public void TakeDamage(float damage)
     {
-
-
         if (Random.Range(0.0f, 1.0f) > __brickModel.Evasion)
         {
             __brickModel.Life -= damage;
@@ -28,12 +26,12 @@ public class BrickController : MonoBehaviour
             print(gameObject.tag);
             if (gameObject.CompareTag("Enemy"))
             {
-                FindObjectOfType<GameController>().score += 25;
-                FindObjectOfType<GameController>().EnemyDead();
+                FindFirstObjectByType<GameController>().score += 25;
+                FindFirstObjectByType<GameController>().EnemyDead();
             }
             else
             {
-                FindObjectOfType<GameController>().score += 5;
+                FindFirstObjectByType<GameController>().score += 5;
             }
             if (__brickModel.SpawnObjectOnDestroy != null)
             {

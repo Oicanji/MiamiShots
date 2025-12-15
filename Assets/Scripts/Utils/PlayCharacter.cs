@@ -12,6 +12,6 @@ public class PlayCharacter : MonoBehaviour
         PlayerPrefs.SetString("characterName", characterName);
         PlayerPrefs.SetString("weaponName", weaponName);
         PlayerPrefs.Save();
-        FindObjectOfType<SceneController>().LoadScene("level_1");
+        FindFirstObjectByType<SceneController>().LoadScene("level_1");
     }
 }

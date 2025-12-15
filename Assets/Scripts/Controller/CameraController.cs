@@ -38,8 +38,6 @@ public class CameraController : MonoBehaviour
             // Interpolar suavemente entre a posição atual da câmera e a posição desejada
             transform.position = Vector3.Lerp(transform.position, targetPosition, cameraModel.FollowSpeed * Time.deltaTime);
         }
-        // fazer a camera ficar balançando de -14g a 14g
-
-        transform.Rotate(0, 0, Mathf.Sin(Time.time * cameraModel.RotationSpeed) * cameraModel.RotationMultiplier);
+        // transform.Rotate(0, 0, Mathf.Sin(Time.time * cameraModel.RotationSpeed) * cameraModel.RotationMultiplier);
     }
 }

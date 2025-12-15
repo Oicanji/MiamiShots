@@ -56,7 +56,7 @@ public class BulletController : MonoBehaviour
         if (!isActive) return;  // Se a bala estiver desativada, não refletir
         Vector2 reflectedDirection = Vector2.Reflect(bulletModel.Direction, collision.contacts[0].normal);
         bulletModel.Direction = reflectedDirection;
-        rigidbodyBall.velocity = bulletModel.Direction * bulletModel.Speed;
+        rigidbodyBall.linearVelocity = bulletModel.Direction * bulletModel.Speed;
 
         float angle = Mathf.Atan2(bulletModel.Direction.y, bulletModel.Direction.x) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.Euler(0f, 0f, angle - 90f);
@@ -67,7 +67,7 @@ public class BulletController : MonoBehaviour
     {
         // Desativar lógica física e visual da bala
         isActive = false;
-        rigidbodyBall.velocity = Vector2.zero; // Parar o movimento
+        rigidbodyBall.linearVelocity = Vector2.zero; // Parar o movimento
         rigidbodyBall.isKinematic = true;      // Desativar física
         GetComponent<Collider2D>().enabled = false; // Desativar colisões
         GetComponent<SpriteRenderer>().enabled = false; // Esconder o sprite da bala

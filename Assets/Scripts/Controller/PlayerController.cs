@@ -31,7 +31,7 @@ public class PlayerController : MonoBehaviour
         __animatorMelee = __transform.GetChild(0).GetChild(0).GetComponent<Animator>();
         __MeleeCollider = __transform.GetChild(0).GetChild(0).GetChild(0).gameObject;
         __cameraModel = Camera.main.GetComponent<CameraModel>();
-        gameController = FindObjectOfType<GameController>();
+        gameController = FindFirstObjectByType<GameController>();
         GameObject uiDash = GameObject.Find("Dash");
         if (uiDash != null) __playerModel.DashImage = uiDash.GetComponent<Image>();
         GameObject uiMelee = GameObject.Find("Knife");
